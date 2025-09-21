@@ -50,7 +50,7 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav mx-auto d-flex gap-3 header-links">
             <li className="nav-item">
-              <a className="nav-link" href="/" style={{ color: 'inherit' }}>
+              <a className="nav-link" href="#/" style={{ color: 'inherit' }}>
                 Home
               </a>
             </li>
