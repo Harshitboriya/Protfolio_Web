@@ -24,7 +24,7 @@ function Header() {
     >
       <div className="container-fluid">
         {/* Left - Brand */}
-        <a className="navbar-brand ms-2" href="/" style={{ color: 'inherit' }}>
+        <a className="navbar-brand ms-2" href="#/" style={{ color: 'inherit' }}>
           <img
             src="https://plus.unsplash.com/premium_photo-1661879449050-069f67e200bd?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Logo"
