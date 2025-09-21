@@ -11,7 +11,7 @@ import AOS from "aos";
 import Footer from './components/Footer'
 import "aos/dist/aos.css";
 import Inquery from './components/Inquery'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter,BrowserRouter, Routes, Route } from "react-router-dom";
 import Work from './page2.0/Work'
 import Medica from './page2.0/Medica'
 import Agric from './page2.0/Agric'
@@ -26,38 +26,31 @@ function App() {
 
   return (
     <>
-    
-            <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={
-          <>
-          <MainP/>
-            <Mainpage />
-            <Page1 />
-            {/* <Page2 /> */}
-            <Work></Work>
-            <Certificat />
-            <Inquery/>
-          </>
-        } />
+<HashRouter>
+  <Header />
+  <Routes>
+    <Route path="/" element={
+      <>
+        <MainP/>
+        <Mainpage />
+        <Page1 />
+        <Work />
+        <Certificat />
+        <Inquery/>
+      </>
+    } />
+    <Route path="/Mainpage" element={<Mainpage />} />
+    <Route path="/Page1" element={<Page1 />} />
+    <Route path="/Certificat" element={<Certificat />} />
+    <Route path="/Page2" element={<Page2 />} />
+    <Route path="/inquiry" element={<Inquery />} />
+    <Route path="/Medica" element={<Medica />} />
+    <Route path="/Agric" element={<Agric />} />
+    <Route path="/Other" element={<OtherS/>} />
+  </Routes>
+  <Footer />
+</HashRouter>
 
-        
-        <Route path="/Mainpage" element={<Mainpage />} />
-        <Route path="/Page1" element={<Page1 />} />
-        <Route path="/Certificat" element={<Certificat />} />
-        <Route path="/Page2" element={<Page2 />} />
-        <Route path="/inquiry" element={<Inquery />} />
-        <Route path="/Medica" element={<Medica />} />
-        <Route path="/Agric" element={<Agric />} />
-                <Route path="/Other" element={<OtherS/>} />
-
-      
-
-
-      </Routes>
-      <Footer />
-    </BrowserRouter>
     </>
   )
 }

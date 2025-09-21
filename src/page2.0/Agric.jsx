@@ -92,6 +92,10 @@ export default function Medica() {
         </div>
       </div>
 
+    
+    
+      
+
       {/* Hover effect */}
       <style>{`
         .work:hover img { transform: scale(1.05); }
