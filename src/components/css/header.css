@@ -1,0 +1,40 @@
+/* Navbar link hover animation except dropdown */
+.header-links .nav-item:not(.dropdown) .nav-link {
+  position: relative;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.header-links .nav-item:not(.dropdown) .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #0d6efd;
+  transition: width 0.3s;
+}
+
+.header-links .nav-item:not(.dropdown) .nav-link:hover {
+  color: #0d6efd;
+}
+
+.header-links .nav-item:not(.dropdown) .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Button hover animation */
+.btn-hover {
+  transition: all 0.3s ease;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-hover:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
