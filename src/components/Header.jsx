@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './css/header.css';
+import { Link } from "react-router-dom";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,12 +55,12 @@ function Header() {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Certificat" style={{ color: 'inherit' }}>
+              <a className="nav-link" href="#/Certificat" style={{ color: 'inherit' }}>
                 Certificate
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Page1" style={{ color: 'inherit' }}>
+              <a className="nav-link" href="#/Page1" style={{ color: 'inherit' }}>
                 Vession
               </a>
             </li>
@@ -76,17 +77,17 @@ function Header() {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="/Medica">
+                  <a className="dropdown-item" href="#/Medica">
                     Medical
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/Agric">
+                  <a className="dropdown-item" href="#/Agric">
                     Agriculture
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="/Other">
+                  <a className="dropdown-item" href="#/Other">
                     Something else here
                   </a>
                 </li>
@@ -94,7 +95,7 @@ function Header() {
             </li>
           </ul>
 
-          <a href="/inquiry">
+          <a href="#/inquiry">
             <button type="button" className="btn btn-primary btn-hover me-2">
               Contact Us
             </button>

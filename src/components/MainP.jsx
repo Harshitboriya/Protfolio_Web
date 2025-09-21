@@ -5,6 +5,7 @@ import './css/mainp.css'; // We'll create this CSS
 
 export default function MainP() {
   return (
+    
     <section className="hero-section">
       <div className="hero-container">
         {/* Left Text */}
