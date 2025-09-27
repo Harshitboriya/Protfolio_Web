@@ -45,30 +45,33 @@ export default function Certificat() {
   ];
 
   return (
-    <div ref={sectionRef} className="certificate-container">
-      <div className="row g-4 justify-content-center w-100">
-        {logos.map((logo, index) => (
-          <div key={index} className="col-6 col-md-3">
-            {logo.link ? (
-              <a href={logo.link} target="_blank" rel="noopener noreferrer">
+    <section ref={sectionRef} className="certificate-container py-5 bg-light">
+      <div className="container">
+        <h2 className="text-center mb-4">Our Certifications</h2>
+        <div className="row g-4 justify-content-center align-items-center">
+          {logos.map((logo, index) => (
+            <div key={index} className="col-6 col-sm-4 col-md-3 text-center">
+              {logo.link ? (
+                <a href={logo.link} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className={`img-fluid certificate-logo ${visible ? "visible" : ""}`}
+                    style={{ animationDelay: `${index * 0.2}s` }}
+                  />
+                </a>
+              ) : (
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className={`img-fluid floating-logo ${visible ? "visible" : ""}`}
+                  className={`img-fluid certificate-logo ${visible ? "visible" : ""}`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 />
-              </a>
-            ) : (
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className={`img-fluid floating-logo ${visible ? "visible" : ""}`}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              />
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

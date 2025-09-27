@@ -35,3 +35,31 @@
     opacity: 1;
   }
 }
+
+.certificate-container {
+  background-color: #f8f9fa; /* light background */
+}
+
+.certificate-container h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+.certificate-logo {
+  max-width: 120px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  cursor: pointer;
+}
+
+.certificate-logo.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.certificate-logo:hover {
+  transform: translateY(-5px) scale(1.05);
+  transition: transform 0.3s ease;
+}

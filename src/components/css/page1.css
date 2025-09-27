@@ -1,0 +1,21 @@
+Prevent horizontal scroll
+body, html {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: make carousel captions fit inside */
+.carousel-caption {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make images fully responsive */
+.carousel-item img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}

@@ -38,3 +38,54 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Logo */
+.logo {
+  height: 40px;   /* smaller height */
+  width: auto;    /* maintain aspect ratio */
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Optional: adjust further for mobile */
+@media (max-width: 768px) {
+  .logo {
+    height: 35px;  /* slightly smaller on mobile */
+  }
+}
+
+/* Smooth collapse animation for mobile */
+@media (max-width: 991px) {
+  .collapse.navbar-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .collapse.navbar-collapse.show {
+    max-height: 500px; /* Adjust according to menu content */
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* Make button full width for mobile */
+  .btn-hover {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    display: block;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-hover:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+}

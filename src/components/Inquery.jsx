@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import emailjs from "@emailjs/browser";
+import "./css/Inquriy.css"; // We'll add animation styles here
 
 export default class Inquiry extends Component {
   state = {
@@ -15,27 +17,46 @@ export default class Inquiry extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", this.state.formData);
-    this.setState({
-      submitted: true,
-      formData: { name: "", email: "", message: "" },
-    });
+
+    const { name, email, message } = this.state.formData;
+
+    // EmailJS send
+    emailjs
+      .send(
+        "service_568gbue", // replace with your EmailJS service ID
+        "template_jjv2xtu", // replace with your EmailJS template ID
+        { name, email, message },
+        "Y5RaPDVEzzgMs3VYp" // replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
+          console.log("Email sent:", result.text);
+          this.setState({
+            submitted: true,
+            formData: { name: "", email: "", message: "" },
+          });
+        },
+        (error) => {
+          console.log("Email send error:", error.text);
+          alert("Oops! Something went wrong. Try again.");
+        }
+      );
   };
 
   render() {
     const { formData, submitted } = this.state;
     return (
-      <div className="container my-5">
-        <h2 className="text-center mb-4">Inquiry Form</h2>
+      <div className="container my-5 inquiry-form">
+        <h2 className="text-center mb-4 animate-title">Inquiry Form</h2>
         <div className="row justify-content-center">
           <div className="col-md-6">
             {submitted && (
-              <div className="alert alert-success" role="alert">
+              <div className="alert alert-success animate-alert" role="alert">
                 Thank you! We will reach out to you soon.
               </div>
             )}
             <form onSubmit={this.handleSubmit}>
-              <div className="mb-3">
+              <div className="mb-3 animate-input">
                 <label htmlFor="name" className="form-label">
                   Name
                 </label>
@@ -50,7 +71,7 @@ export default class Inquiry extends Component {
                 />
               </div>
 
-              <div className="mb-3">
+              <div className="mb-3 animate-input">
                 <label htmlFor="email" className="form-label">
                   Email
                 </label>
@@ -65,7 +86,7 @@ export default class Inquiry extends Component {
                 />
               </div>
 
-              <div className="mb-3">
+              <div className="mb-3 animate-input">
                 <label htmlFor="message" className="form-label">
                   Message
                 </label>
@@ -80,8 +101,8 @@ export default class Inquiry extends Component {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn btn-primary w-100">
-                Submit Inquiry
+              <button type="submit" className="btn btn-primary w-100 animate-button">
+                Send Inquiry
               </button>
             </form>
           </div>
