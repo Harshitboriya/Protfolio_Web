@@ -8,3 +8,19 @@
 .app-container > .flex-grow-1 {
   flex: 1; /* takes up remaining space */
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* hide horizontal overflow */
+  width: 100%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
