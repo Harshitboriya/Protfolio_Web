@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import './css/work1.css'
+
 
 export default function Work() {
   const navigate = useNavigate();
@@ -26,7 +28,13 @@ export default function Work() {
   ];
 
   return (
-    <div id="portfolio" style={{ padding: "50px 0", background: "#f8f9fa" }}>
+<div
+  id="portfolio"
+  style={{
+    padding: "50px 0",
+    backgroundImage: "linear-gradient(1300deg, #baffb8ff, #ffcdcdff)",
+  }}
+>
       <div className="container">
         <h1 style={{ textAlign: "center", marginBottom: "40px" }}>Over Services</h1>
         <div
