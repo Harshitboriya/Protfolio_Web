@@ -17,6 +17,7 @@ import Medica from "./page2.0/Medica";
 import Agric from "./page2.0/Agric";
 import OtherS from "./page2.0/OtherS";
 import MainP from "./components/MainP";
+import WhyUs from "./components/Whyus";
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
                 {/* <Page2 /> */}
                 <Work></Work>
                 <Certificat />
+               <WhyUs/>
                 <Inquery />
               </>
             }

@@ -1,28 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './css/header.css';
 import { Link } from "react-router-dom";
 
 function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Handle scroll background
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <nav
-      className={`navbar navbar-expand-lg fixed-top px-3 shadow-sm transition-navbar ${
-        scrolled ? 'navbar-scrolled' : ''
-      }`}
-    >
+    <nav className="navbar navbar-expand-lg navbar-static px-3 shadow-sm">
       <div className="container-fluid">
-        {/* Left - Brand */}
+        {/* Brand */}
         <a className="navbar-brand ms-2" href="#/">
           <img
             src="https://plus.unsplash.com/premium_photo-1661879449050-069f67e200bd?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.1.0"
@@ -31,7 +17,7 @@ function Header() {
           />
         </a>
 
-        {/* Mobile toggler */}
+        {/* Mobile Toggler */}
         <button
           className="navbar-toggler"
           type="button"
@@ -44,22 +30,11 @@ function Header() {
         {/* Menu */}
         <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`}>
           <ul className="navbar-nav mx-auto d-flex gap-3 header-links">
-            <li className="nav-item">
-              <a className="nav-link" href="#/">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/Certificat">Certificate</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#/Page1">Vession</a>
-            </li>
+            <li className="nav-item"><a className="nav-link" href="#/">Home</a></li>
+            <li className="nav-item"><a className="nav-link" href="#/Certificat">Certificate</a></li>
+            <li className="nav-item"><a className="nav-link" href="#/Page1">Vession</a></li>
             <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
+              <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                 Other Product
               </a>
               <ul className="dropdown-menu">

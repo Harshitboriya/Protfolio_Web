@@ -1,91 +1,62 @@
-/* Navbar link hover animation except dropdown */
-.header-links .nav-item:not(.dropdown) .nav-link {
-  position: relative;
-  color: #333;
+/* Navbar static with blue background */
+.navbar-static {
+  background-color: #0d6efd; /* Bootstrap blue */
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+/* Navbar links */
+.navbar-static .nav-link {
+  color: white;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
-.header-links .nav-item:not(.dropdown) .nav-link::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -3px;
-  left: 0;
-  background-color: #0d6efd;
-  transition: width 0.3s;
+.navbar-static .nav-link:hover,
+.navbar-static .nav-link:focus {
+  color: #cce5ff; /* lighter blue on hover */
 }
 
-.header-links .nav-item:not(.dropdown) .nav-link:hover {
-  color: #0d6efd;
+/* Navbar brand/logo */
+.navbar-static .navbar-brand img.logo {
+  height: 50px;
+  width: auto;
 }
 
-.header-links .nav-item:not(.dropdown) .nav-link:hover::after {
-  width: 100%;
-}
-
-/* Button hover animation */
-.btn-hover {
-  transition: all 0.3s ease;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-
-.btn-hover:hover {
+/* Contact button */
+.navbar-static .btn-primary {
   background-color: #0056b3;
-  border-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: none;
 }
 
-/* Logo */
-.logo {
-  height: 40px;   /* smaller height */
-  width: auto;    /* maintain aspect ratio */
-  transition: transform 0.3s ease;
+.navbar-static .btn-primary:hover {
+  background-color: #004494;
 }
 
-.logo:hover {
-  transform: scale(1.05);
-}
-
-/* Optional: adjust further for mobile */
-@media (max-width: 768px) {
-  .logo {
-    height: 35px;  /* slightly smaller on mobile */
-  }
-}
-
-/* Smooth collapse animation for mobile */
-@media (max-width: 991px) {
-  .collapse.navbar-collapse {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-  }
-
-  .collapse.navbar-collapse.show {
-    max-height: 500px; /* Adjust according to menu content */
-  }
-
+/* Responsive adjustments */
+@media (max-width: 992px) {
   .navbar-nav {
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  /* Make button full width for mobile */
-  .btn-hover {
-    width: 90%;
-    margin: 10px auto 0 auto;
-    display: block;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;
+  }
+}
 
-  .btn-hover:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
+/* Mobile toggler color */
+.navbar-toggler {
+  border: 1px solid white;
+  
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+  display: block;
+  height: 3px;
+  width: 25px;
+  margin: 5px 0;
+  transition: all 0.3s;
+}
+
+.navbar-toggler-icon.open {
+  transform: rotate(45deg);
 }
