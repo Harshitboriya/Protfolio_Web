@@ -2,17 +2,32 @@ import React from "react";
 
 export default function Medica() {
   const products = [
-    "Medical Equipment",
-    "Laboratory Equipment",
-    "Surgical Tools",
-    "Diagnostic Machines",
-    "Patient Care Equipment",
-    "Pharmaceutical Supplies",
-    "Hospital Furniture",
-    "Protective Gear",
-    "Medical Imaging Devices",
-    "Rehabilitation Equipment"
-  ];
+  {
+    name: "Medical Equipment",
+    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "High-quality medical instruments for healthcare facilities."
+  },
+  {
+    name: "Laboratory Equipment",
+    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Precise lab tools and devices for accurate analysis."
+  },
+  {
+    name: "Surgical Tools",
+    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Professional surgical instruments for medical procedures."
+  },
+  {
+    name: "Diagnostic Machines",
+    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Advanced diagnostic machines for accurate results."
+  },
+  {
+    name: "Patient Care Equipment",
+    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    desc: "Comfortable and safe equipment for patient care."
+  }
+];
 
   return (
     <div
@@ -86,7 +101,7 @@ export default function Medica() {
           </div>
         </div>
 
-        {/* Right: Product List (Improved) */}
+        {/* Right: Product List with images & descriptions */}
         <div style={{ flex: "1 1 400px" }}>
           <h2 style={{ marginBottom: "20px" }}>Our Products</h2>
           <div
@@ -105,8 +120,8 @@ export default function Medica() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "15px 20px",
+                  gap: "15px",
+                  padding: "10px 15px",
                   background: "#fff",
                   borderRadius: "12px",
                   boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
@@ -122,8 +137,16 @@ export default function Medica() {
                   e.currentTarget.style.background = "#fff";
                 }}
               >
-                <span style={{ fontWeight: "500", color: "#333" }}>{product}</span>
-                <span style={{ color: "#007bff", fontWeight: "bold" }}>→</span>
+                <img
+                  src={product.img}
+                  alt={product.name}
+                  style={{ width: "60px", height: "60px", borderRadius: "10px", objectFit: "cover" }}
+                />
+                <div>
+                  <div style={{ fontWeight: "600", color: "#333" }}>{product.name}</div>
+                  <div style={{ fontSize: "12px", color: "#555" }}>{product.desc}</div>
+                </div>
+                <span style={{ color: "#007bff", fontWeight: "bold", marginLeft: "auto" }}>→</span>
               </div>
             ))}
           </div>
