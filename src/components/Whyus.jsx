@@ -3,7 +3,6 @@ import './css/whyus.css';
 import Why from '../components/Photo/Why.jpg'
 export default function WhyUs() {
   const points = [
-   
 "Quality Focus: We adhere to stringent quality standards, ensuring our products meet international regulations and exceed client expectations.",
 "Reliable Supply Chain: Our direct connection with farmers and efficient logistics ensure timely and efficient delivery of products.",
 "Customized Solutions: We work closely with our clients to understand their specific requirements and provide tailored solutions."

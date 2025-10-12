@@ -38,3 +38,31 @@ body, html {
   filter: blur(10px) brightness(0.3); /* dim & blur */
   z-index: 1;
 }
+
+/* Make carousel image smaller on smaller screens */
+@media (max-width: 992px) {
+  .carousel-item img {
+    width: 80% !important;
+  }
+
+  .carousel-caption h2 {
+    font-size: 24px !important;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-item img {
+    width: 95% !important;
+  }
+
+  .carousel-caption {
+    bottom: 20px !important;
+    padding: 8px 12px !important;
+  }
+
+  .carousel-caption h2 {
+    font-size: 18px !important;
+    line-height: 1.2;
+  }
+}
