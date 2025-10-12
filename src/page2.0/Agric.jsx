@@ -1,17 +1,18 @@
 import React from "react";
+import sub_d from "../page2.0/Img/Img_Dehydrated/Dehydrated_img.jpg";
 
 export default function AgriProduct() {
   const products = [
-    "Fertilizers",
-    "Seeds",
-    "Farm Tools",
-    "Irrigation Equipment",
-    "Pesticides",
-    "Organic Products",
-    "Greenhouse Supplies",
-    "Agri Machinery",
-    "Harvesting Tools",
-    "Storage Solutions"
+    { name: "White Onion", src: sub_d },
+    { name: "Red Onion", src: sub_d },
+    { name: "Garlic", src: sub_d },
+    { name: "Chilli", src: sub_d },
+    { name: "Mango", src: sub_d },
+    { name: "Banana", src: sub_d },
+    { name: "Carrot", src: sub_d },
+    { name: "Beetroot", src: sub_d },
+    { name: "Dried Orange", src: sub_d },
+    { name: "Sweet Potato", src: sub_d },
   ];
 
   return (
@@ -21,14 +22,13 @@ export default function AgriProduct() {
         position: "relative",
         padding: "50px",
         background: "#f8f9fa",
-        overflow: "hidden"
+        overflow: "hidden",
       }}
     >
       {/* Background image */}
       <div
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80')",
+          backgroundImage: `url(${sub_d})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "absolute",
@@ -37,11 +37,19 @@ export default function AgriProduct() {
           width: "100%",
           height: "100%",
           opacity: 0.2,
-          zIndex: 0
+          zIndex: 0,
         }}
       ></div>
 
-      <div style={{ position: "relative", zIndex: 1, display: "flex", flexWrap: "wrap", gap: "50px" }}>
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "50px",
+        }}
+      >
         {/* Left: Image */}
         <div
           className="work"
@@ -51,17 +59,18 @@ export default function AgriProduct() {
             position: "relative",
             overflow: "hidden",
             borderRadius: "15px",
-            boxShadow: "0 8px 20px rgba(0,0,0,0.2)"
+            boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?q=80&w=1974&auto=format&fit=crop"
+            src={sub_d}
             alt="Agri"
             style={{
               width: "100%",
+              height:"90%" ,
               display: "block",
               transition: "transform 0.5s",
-              borderRadius: "15px"
+              borderRadius: "15px",
             }}
           />
           <div
@@ -77,12 +86,12 @@ export default function AgriProduct() {
               padding: "20px",
               textAlign: "center",
               color: "#fff",
-              transition: "height 0.5s"
+              transition: "height 0.5s",
             }}
           >
-            <h3 style={{ marginBottom: "10px" }}>Agri Product</h3>
+            <h3 style={{ marginBottom: "10px" }}>Dehydrated Fruits and Vegetables Powder</h3>
             <p style={{ fontSize: "14px" }}>
-              Quality agricultural products and tools for modern farming.
+              Quality dehydrated products for health and convenience.
             </p>
           </div>
         </div>
@@ -97,17 +106,17 @@ export default function AgriProduct() {
               gap: "15px",
               maxHeight: "500px",
               overflowY: "auto",
-              paddingRight: "5px"
+              paddingRight: "5px",
             }}
           >
             {products.map((product, index) => (
               <div
                 key={index}
-                style={{
+                 style={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "15px 20px",
+                  gap: "15px",
+                  padding: "10px 15px",
                   background: "#fff",
                   borderRadius: "12px",
                   boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
@@ -123,24 +132,26 @@ export default function AgriProduct() {
                   e.currentTarget.style.background = "#fff";
                 }}
               >
-                <span style={{ fontWeight: "500", color: "#333" }}>{product}</span>
-                <span style={{ color: "#007bff", fontWeight: "bold" }}>→</span>
+                {/* <img
+                  src={product.src}
+                  alt={product.name}
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                    borderRadius: "10px",
+                    objectFit: "cover",
+                  }}
+
+                /> */}
+                 
+                <span style={{ fontWeight: "500", color: "#333" }}>{product.name}</span>
+                <span style={{ color: "#007bff", fontWeight: "bold" ,marginLeft: "auto"}}>→</span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Bottom: Video Section */}
-      <div style={{ width: "100%", marginTop: "50px", textAlign: "center" }}>
-        <h2>Product Video</h2>
-        <div style={{ maxWidth: "800px", margin: "20px auto" }}>
-          <video width="100%" height="auto" controls style={{ borderRadius: "15px" }}>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video>
-        </div>
-      </div>
 
       {/* Hover effect */}
       <style>{`

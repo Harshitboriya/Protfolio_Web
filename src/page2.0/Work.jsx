@@ -1,18 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import './css/work1.css'
+import main_frozen from '../page2.0/Img/Img_frozen/common_f.jpg'
+import main_Deh from '../page2.0/Img/Img_Dehydrated/Dehydrated_img.jpg'
+import main_herbs from '../page2.0/Img/Img_herbs/Herbs_img.jpg'
 
 export default function Work() {
   const navigate = useNavigate();
 
   const workData = [
-    { img: "https://images.unsplash.com/photo-1638202993928-7267aad84c31?q=80&w=1974&auto=format&fit=crop", title: "Medical", desc: "Lorem ipsum dolor sit amet.", link: "/Medica" },
-    { img: "https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?q=80&w=1974&auto=format&fit=crop", title: "Agriculture", desc: "Lorem ipsum dolor sit amet.", link: "/Agric" },
-    { img: "https://images.unsplash.com/photo-1571175419967-b8cff792febd?q=80&w=687&auto=format&fit=crop", title: "Other", desc: "Lorem ipsum dolor sit amet.", link: "/Other" },
-    { img: "https://images.unsplash.com/photo-1638202993928-7267aad84c31?q=80&w=1974&auto=format&fit=crop", title: "Medical", desc: "Lorem ipsum dolor sit amet.", link: "/Medica" },
-    { img: "https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?q=80&w=1974&auto=format&fit=crop", title: "Agriculture", desc: "Lorem ipsum dolor sit amet.", link: "/Agric" },
-    { img: "https://images.unsplash.com/photo-1571175419967-b8cff792febd?q=80&w=687&auto=format&fit=crop", title: "Other", desc: "Lorem ipsum dolor sit amet.", link: "/Other" },
-  ];
+    { src : main_frozen, title: "Frozen Fruits And Vegetables ", desc: "Lorem ipsum dolor sit amet.", link: "/Medica" },
+    { src: main_Deh,title: "Dehydrated Fruits and vegetables powder", link: "/Agric" },
+    { src: main_herbs, title: "Herbs And ayurvedic powder ", desc: "Lorem ipsum dolor sit amet.", link: "/Other" },
+    ];
 
   return (
     <div id="portfolio" className="portfolio-section">
@@ -25,7 +25,7 @@ export default function Work() {
               className="work-card"
               onClick={() => navigate(work.link)}
             >
-              <img src={work.img} alt={work.title} className="work-img" />
+              <img src={work.src} alt={work.title} className="work-img" />
               <div className="layer">
                 <h3>{work.title}</h3>
                 <p>{work.desc}</p>
@@ -39,7 +39,7 @@ export default function Work() {
       <style>{`
         .portfolio-section {
           padding: 50px 20px;
-          background: linear-gradient(1300deg, #baffb8ff, #ffcdcdff);
+          background: linear-gradient(1300deg, #8ffd8bff, #00ffe182);
         }
         .section-title {
           text-align: center;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './css/header.css';
 import { Link } from "react-router-dom";
+import logo from "/src/components/Photo/Logo1.png";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,9 +12,11 @@ function Header() {
         {/* Brand */}
         <a className="navbar-brand ms-2" href="#/">
           <img
-            src="https://plus.unsplash.com/premium_photo-1661879449050-069f67e200bd?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.1.0"
+             src={logo}
+            // src="https://plus.unsplash.com/premium_photo-1661879449050-069f67e200bd?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.1.0"
             alt="Logo"
             className="logo"
+            style={{ height: "80px", width: "auto" }} // optional styling
           />
         </a>
 
@@ -31,16 +34,18 @@ function Header() {
         <div className={`collapse navbar-collapse ${menuOpen ? 'show' : ''}`}>
           <ul className="navbar-nav mx-auto d-flex gap-3 header-links">
             <li className="nav-item"><a className="nav-link" href="#/">Home</a></li>
+            <li className="nav-item"><a className="nav-link" href="#/Whyus">About</a></li>
             <li className="nav-item"><a className="nav-link" href="#/Certificat">Certificate</a></li>
             <li className="nav-item"><a className="nav-link" href="#/Page1">Vession</a></li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                Other Product
+                 Products
               </a>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item" href="#/Medica">Medical</a></li>
-                <li><a className="dropdown-item" href="#/Agric">Agriculture</a></li>
-                <li><a className="dropdown-item" href="#/Other">Something else here</a></li>
+                <li><a className="dropdown-item" href="#/Medica">Frozen Fruits And Vegetables </a></li>
+                <li><a className="dropdown-item" href="#/Agric">Dehydrated Fruits and Vegetables Powder</a></li>
+                <li><a className="dropdown-item" href="#/Other">Herbs And Ayurvedic Powder
+</a></li>
               </ul>
             </li>
           </ul>

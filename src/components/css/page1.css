@@ -1,21 +1,40 @@
-Prevent horizontal scroll
 body, html {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
-/* Optional: make carousel captions fit inside */
 .carousel-caption {
   padding-left: 15px;
   padding-right: 15px;
-  max-width: 100%;
+  max-width: 90%;
   box-sizing: border-box;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  text-align: center;
 }
 
-/* Make images fully responsive */
-.carousel-item img {
-  width: 100%;
-  max-width: 100%;
+/* Main image in center */
+.carousel-item .main-img {
+  /* width: 60%;         60% width */
+  height: auto;
   display: block;
+  margin: 0 auto;     /* center horizontally */
+  z-index: 2;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* Background image (dimmed and blurred) */
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px) brightness(0.3); /* dim & blur */
+  z-index: 1;
 }

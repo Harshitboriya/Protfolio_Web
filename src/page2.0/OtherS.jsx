@@ -1,17 +1,26 @@
 import React from "react";
+import Herbs from "../page2.0/Img/Img_herbs/Herbs_img.jpg"; // make sure path is correct
 
-export default function OtherServices() {
-  const services = [
-    "Consulting Services",
-    "Custom Solutions",
-    "Maintenance Support",
-    "Training & Workshops",
-    "Tech Integration",
-    "Remote Assistance",
-    "Supply Chain Solutions",
-    "Installation Services",
-    "Software Tools",
-    "Emergency Support"
+export default function HerbsProducts() {
+  const products = [
+    "Moringa Leaves",
+    "Neem",
+    "Ashwagandha",
+    "Amla",
+    "Satavari",
+    "Silajit",
+    "Tamarind Seeds",
+    "Bringaraj",
+    "Dried Orange Peels",
+    "Pomegranate Peels",
+    "Lemon Peels",
+    "White Musli",
+    "Sabja Seeds",
+    "Chia Seeds",
+    "Pumpkin Seeds",
+    "Stevia Leaves",
+    "Mint",
+    "Hibiscus"
   ];
 
   return (
@@ -27,8 +36,7 @@ export default function OtherServices() {
       {/* Background image */}
       <div
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1589002771170-9692b81b05da?q=80&w=1935&auto=format&fit=crop')",
+          backgroundImage: `url(${Herbs})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "absolute",
@@ -55,8 +63,8 @@ export default function OtherServices() {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1571175419967-b8cff792febd?q=80&w=687&auto=format&fit=crop"
-            alt="Other Services"
+            src={Herbs}
+            alt="Herbs"
             style={{
               width: "100%",
               display: "block",
@@ -80,16 +88,16 @@ export default function OtherServices() {
               transition: "height 0.5s"
             }}
           >
-            <h3 style={{ marginBottom: "10px" }}>Other Services</h3>
+            <h3 style={{ marginBottom: "10px" }}>Herbs And Ayurvedic Powder</h3>
             <p style={{ fontSize: "14px" }}>
-              We will add more services in the near future. Stay tuned!
+              Natural and high-quality herbal powders for health and wellness.
             </p>
           </div>
         </div>
 
-        {/* Right: Services List */}
+        {/* Right: Product List */}
         <div style={{ flex: "1 1 400px" }}>
-          <h2 style={{ marginBottom: "20px" }}>Upcoming Services</h2>
+          <h2 style={{ marginBottom: "20px" }}>Our Products</h2>
           <div
             style={{
               display: "grid",
@@ -100,7 +108,7 @@ export default function OtherServices() {
               paddingRight: "5px"
             }}
           >
-            {services.map((service, index) => (
+            {products.map((product, index) => (
               <div
                 key={index}
                 style={{
@@ -123,22 +131,11 @@ export default function OtherServices() {
                   e.currentTarget.style.background = "#fff";
                 }}
               >
-                <span style={{ fontWeight: "500", color: "#333" }}>{service}</span>
+                <span style={{ fontWeight: "500", color: "#333" }}>{product}</span>
                 <span style={{ color: "#007bff", fontWeight: "bold" }}>→</span>
               </div>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* Optional Video Section */}
-      <div style={{ width: "100%", marginTop: "50px", textAlign: "center" }}>
-        <h2>Services Overview</h2>
-        <div style={{ maxWidth: "800px", margin: "20px auto" }}>
-          <video width="100%" height="auto" controls style={{ borderRadius: "15px" }}>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video>
         </div>
       </div>
 

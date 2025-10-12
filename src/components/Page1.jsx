@@ -1,29 +1,21 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/page1.css';
+import main_frozen from '../page2.0/Img/Img_frozen/common_f.jpg';
+import main_Deh from '../page2.0/Img/Img_Dehydrated/Dehydrated_img.jpg';
+import main_herbs from '../page2.0/Img/Img_herbs/Herbs_img.jpg';
+import { href, Link } from 'react-router-dom';
 
 export default function Page1() {
-  // Array of slides
   const slides = [
-    {
-      img: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0",
-      title: "First Slide Label",
-      desc: "Some representative placeholder content for the first slide."
-    },
-    {
-      img: "https://images.unsplash.com/photo-1606445095898-16c730da5732?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0",
-      title: "Second Slide Label",
-      desc: "Some representative placeholder content for the second slide."
-    },
-    {
-      img: "https://images.unsplash.com/photo-1741851374582-79f4ac123442?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
-      title: "Third Slide Label",
-      desc: "Some representative placeholder content for the third slide."
-    }
+    { img: main_frozen,title: "Frozen Fruits And Vegetables" },
+    { img: main_Deh, title: "Dehydrated Fruits And Vegetables Powder" },
+    { img: main_herbs, title: "Herbs And Ayurvedic Powders" }
   ];
 
   return (
-    <div id="carouselExampleCaptions" className="carousel slide">
+    <div id="carouselExampleCaptions" className="carousel slide" style={{ height: '100vh' }}>
+      
       {/* Indicators */}
       <div className="carousel-indicators">
         {slides.map((_, idx) => (
@@ -40,18 +32,64 @@ export default function Page1() {
       </div>
 
       {/* Carousel Items */}
-      <div className="carousel-inner">
+      <div className="carousel-inner" style={{ height: '100vh' }}>
         {slides.map((slide, idx) => (
-          <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
+          <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`} style={{ height: '100vh', position: 'relative' }}>
+            
+            {/* Background blurred image */}
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundImage: `url(${slide.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'blur(10px) brightness(0.3)',
+                zIndex: 1,
+              }}
+            ></div>
+
+            {/* Main center image */}
             <img
               src={slide.img}
-              className="d-block w-100"
-              style={{ height: '100vh', objectFit: 'cover', objectPosition: 'center' }}
               alt={`Slide ${idx + 1}`}
+              style={{
+                width: '60%',
+                height: 'auto',
+                display: 'block',
+                margin: '0 auto',
+                position: 'relative',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                zIndex: 2,
+                borderRadius: '10px',
+                boxShadow: '0 5px 20px rgba(0,0,0,0.3)',
+              }}
             />
-            <div className="carousel-caption d-block text-shadow">
-              <h5>{slide.title}</h5>
-              <p>{slide.desc}</p>
+
+            {/* Caption at bottom */}
+            <div
+              className="carousel-caption d-block"
+              style={{
+                position: 'absolute',
+                bottom: '50px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                zIndex: 2,
+                textAlign: 'center',
+                background: 'rgba(0,0,0,0.5)',
+                padding: '15px 25px',
+                borderRadius: '10px',
+                color: '#fff',
+                maxWidth: '80%',
+              }}
+            >
+              <h2 style={{ fontSize: '30px', fontWeight: '700', textShadow: '2px 2px 8px rgba(0,0,0,0.7)' }}>
+                {slide.title}
+              </h2>
             </div>
           </div>
         ))}
@@ -66,6 +104,7 @@ export default function Page1() {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
+
     </div>
   );
 }

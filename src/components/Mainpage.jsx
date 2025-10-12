@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Factory from "../components/Video/Factory.mp4";
+import Herbs from "../page2.0/Img/Img_herbs/Herbs_img.jpg"; // make sure path is correct
 
 export default class Mainpage extends Component {
   componentDidMount() {
@@ -19,13 +21,11 @@ export default class Mainpage extends Component {
     return (
       <div
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1950&q=80')",
+            backgroundImage: `linear-gradient(rgba(114, 175, 147, 0.73), rgba(255, 255, 255, 0.87)),url(${Herbs})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           minHeight: "100vh",
           position: "relative",
-          padding: "50px 0",
         }}
       >
         {/* Overlay */}
@@ -40,35 +40,54 @@ export default class Mainpage extends Component {
           }}
         ></div>
 
-        {/* Content */}
+        {/* Centered Content */}
         <div
           className="container"
           style={{
             position: "relative",
             zIndex: 2,
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "center", // vertical center
           }}
         >
-          <div className="row align-items-center">
-            {/* Left Image */}
+          <div className="row align-items-center w-100">
+            {/* Left Video - 60% */}
             <div
-              className="col-12 col-md-6 mb-4 mb-md-0"
+              className="col-12 col-md-7 mb-4 mb-md-0"
               data-aos="fade-right"
             >
-              <img
-                src="https://images.unsplash.com/photo-1606445095898-16c730da5732?q=80&w=2080&auto=format&fit=crop"
-                alt="Left Side"
+              <video
+                src={Factory}
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="img-fluid rounded"
-                style={{ width: "100%", height: "auto" }}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "500px",
+                  borderRadius: "15px",
+                  objectFit: "cover",
+                  boxShadow: "0 8px 20px rgba(0,0,0,0.2)",
+                }}
               />
             </div>
 
-            {/* Right Content */}
-            <div className="col-12 col-md-6 text-white text-center text-md-start" data-aos="fade-left">
+            {/* Right Content - 40% */}
+            <div
+              className="col-12 col-md-5 text-white text-center text-md-start"
+              data-aos="fade-left"
+            >
               <h2 style={{ fontSize: "2rem", marginBottom: "20px" }}>
-                Our Amazing Feature
+                Your Trusted Partner
               </h2>
               <p style={{ fontSize: "1rem", marginBottom: "20px" }}>
-                This content will animate every time you scroll to this section.
+                Whether you're looking for customized solutions or large-scale
+                supplies, we're committed to delivering exceptional quality and
+                service. Our team is dedicated to understanding your needs and
+                providing tailored solutions that exceed your expectations.
               </p>
               <button className="btn btn-primary btn-lg">Learn More</button>
             </div>

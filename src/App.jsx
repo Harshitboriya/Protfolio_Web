@@ -47,6 +47,7 @@ function App() {
 
           <Route path="/Mainpage" element={<Mainpage />} />
           <Route path="/Page1" element={<Page1 />} />
+          <Route path="/Whyus" element={<WhyUs />} />
           <Route path="/Certificat" element={<Certificat />} />
           <Route path="/Page2" element={<Page2 />} />
           <Route path="/inquiry" element={<Inquery />} />

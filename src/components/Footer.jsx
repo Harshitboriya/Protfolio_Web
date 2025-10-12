@@ -25,11 +25,11 @@ const Footer = () => {
             <h5>MyPortfolio</h5>
             <p>Your trusted partner in providing quality solutions.</p>
             <div className="d-flex gap-3">
-              <button onClick={() => handleSocialClick('Facebook')} className="btn btn-outline-light btn-sm"><i className="bi bi-facebook"></i></button>
-              <button onClick={() => handleSocialClick('Twitter')} className="btn btn-outline-light btn-sm"><i className="bi bi-twitter"></i></button>
-              <button onClick={() => handleSocialClick('LinkedIn')} className="btn btn-outline-light btn-sm"><i className="bi bi-linkedin"></i></button>
-              <button onClick={() => handleSocialClick('Instagram')} className="btn btn-outline-light btn-sm"><i className="bi bi-instagram"></i></button>
-            </div>
+<button onClick={() => handleSocialClick('Facebook')} className="btn btn-outline-light btn-sm fs-4"><i className="bi bi-facebook"></i></button>
+              <button onClick={() => handleSocialClick('Twitter')} className="btn btn-outline-light btn-sm fs-4"><i className="bi bi-twitter"></i></button>
+              <button onClick={() => handleSocialClick('LinkedIn')} className="btn btn-outline-light btn-sm fs-4"><i className="bi bi-linkedin"></i></button>
+              <button onClick={() => handleSocialClick('Instagram')} className="btn btn-outline-light btn-sm fs-4"><i className="bi bi-instagram"></i></button>
+      </div>
           </div>
 
           {/* Quick Links */}
@@ -57,9 +57,9 @@ const Footer = () => {
           <div className="col-md-3 mb-4">
             <h5>Contact Us</h5>
             <ul className="list-unstyled">
-              <li>123 Trade Street, Global City, 12345</li>
-              <li>contact@myportfolio.com</li>
-              <li>+1 (234) 567-8900</li>
+              <li>8, Market Yard Badnawar, Near Varco City Badnawar (MP), India (454660)</li>
+              <li>bharatexims8@gmail.com</li>
+              <li>+91 9174180598</li>
             </ul>
           </div>
 

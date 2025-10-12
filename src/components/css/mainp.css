@@ -1,12 +1,22 @@
 .hero-section {
   width: 100%;
+    background-image: linear-gradient(rgba(0, 200, 255, 0.78), rgb(219, 211, 211)), url('../components/Photo/main.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(190deg, hsl(174, 75%, 83%), #f0feff);
+  /* background-image: url("../Photo/main.jpg"); */
+  /* background: linear-gradient(190deg, hsl(174, 75%, 83%), #f0feff); */
   padding: 0 5%;
   color: #000;
+
+
+
+
+  
 }
 
 .hero-container {

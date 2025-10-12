@@ -1,14 +1,13 @@
 import React from "react";
 import './css/whyus.css';
-
+import Why from '../components/Photo/Why.jpg'
 export default function WhyUs() {
   const points = [
-    "Trusted global trading partner",
-    "High-quality products and services",
-    "Customized solutions for every client",
-    "Sustainable and eco-friendly practices",
-    "Experienced and professional team",
-    "Fast and reliable delivery worldwide"
+   
+"Quality Focus: We adhere to stringent quality standards, ensuring our products meet international regulations and exceed client expectations.",
+"Reliable Supply Chain: Our direct connection with farmers and efficient logistics ensure timely and efficient delivery of products.",
+"Customized Solutions: We work closely with our clients to understand their specific requirements and provide tailored solutions."
+
   ];
 
   return (
@@ -17,7 +16,7 @@ export default function WhyUs() {
         {/* Left Image */}
         <div className="whyus-image">
           <img 
-            src="https://images.unsplash.com/photo-1709136059789-d61700284d5a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            src={Why}
             alt="Farmer or Product"
           />
         </div>

@@ -1,48 +1,35 @@
 import React from "react";
+import common_f from "../page2.0/Img/Img_frozen/common_f.jpg";
+import main_f from "../page2.0/Img/Img_frozen/main_f.jpg"
+
 
 export default function Medica() {
   const products = [
-  {
-    name: "Medical Equipment",
-    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "High-quality medical instruments for healthcare facilities."
-  },
-  {
-    name: "Laboratory Equipment",
-    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Precise lab tools and devices for accurate analysis."
-  },
-  {
-    name: "Surgical Tools",
-    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Professional surgical instruments for medical procedures."
-  },
-  {
-    name: "Diagnostic Machines",
-    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Advanced diagnostic machines for accurate results."
-  },
-  {
-    name: "Patient Care Equipment",
-    img: "https://images.unsplash.com/photo-1758621518748-bde9e586ef9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Comfortable and safe equipment for patient care."
-  }
-];
-
+    { name: "Green Peas", src: main_f },
+    { name: "Green Chana", src: main_f },
+    { name: "Diced Carrot", src:main_f },
+    { name: "Drumstick", src: main_f },
+    { name: "Sweet Corn", src: main_f },
+    { name: "Mango", src: main_f },
+    { name: "Custard Apple", src: main_f },
+    { name: "Strawberry", src:main_f },
+    { name: "Raspberry", src:main_f },
+    { name: "Jamun", src: main_f },
+    { name: "Spinach", src: main_f },
+  ];
   return (
     <div
       id="portfolio"
       style={{
         position: "relative",
         padding: "50px",
-        background: "#f8f9fa"
+        background: "#deffcf6c"
       }}
     >
       {/* Background image */}
       <div
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1950&auto=format&fit=crop')",
+         backgroundImage: `url(${main_f})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           position: "absolute",
@@ -50,7 +37,7 @@ export default function Medica() {
           left: 0,
           width: "100%",
           height: "100%",
-          opacity: 0.2,
+          opacity:0.1,
           zIndex: 0
         }}
       ></div>
@@ -65,17 +52,18 @@ export default function Medica() {
             position: "relative",
             overflow: "hidden",
             borderRadius: "15px",
-            boxShadow: "0 8px 20px rgba(0,0,0,0.2)"
+            boxShadow: "0 8px 20px rgba(255, 255, 255, 0.2)"
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?q=80&w=1974&auto=format&fit=crop"
+            src={common_f}
             alt="Medical"
             style={{
-              width: "100%",
+            height: "100% ",
               display: "block",
               transition: "transform 0.5s",
-              borderRadius: "15px"
+              borderRadius: "15px",
+              paddingTop:"20px",
             }}
           />
           <div
@@ -90,20 +78,20 @@ export default function Medica() {
               bottom: 0,
               padding: "20px",
               textAlign: "center",
-              color: "#fff",
+              color: "#ffffffff",
               transition: "height 0.5s"
             }}
           >
-            <h3 style={{ marginBottom: "10px" }}>Medical</h3>
+            <h3 style={{ marginBottom: "10px" }}>Frozen Fruits And Vegetables</h3>
             <p style={{ fontSize: "14px" }}>
-              Providing top-notch healthcare services with experienced professionals.
+              {/* Providing top-notch healthcare services with experienced professionals. */}
             </p>
           </div>
         </div>
 
         {/* Right: Product List with images & descriptions */}
         <div style={{ flex: "1 1 400px" }}>
-          <h2 style={{ marginBottom: "20px" }}>Our Products</h2>
+          <h2 style={{ marginBottom: "20px",color: "#000000ff", }}>Our Products</h2>
           <div
             style={{
               display: "grid",
@@ -134,14 +122,10 @@ export default function Medica() {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.background = "#fff";
+                  e.currentTarget.style.background = "#ffffffff";
                 }}
               >
-                <img
-                  src={product.img}
-                  alt={product.name}
-                  style={{ width: "60px", height: "60px", borderRadius: "10px", objectFit: "cover" }}
-                />
+               
                 <div>
                   <div style={{ fontWeight: "600", color: "#333" }}>{product.name}</div>
                   <div style={{ fontSize: "12px", color: "#555" }}>{product.desc}</div>
@@ -153,16 +137,6 @@ export default function Medica() {
         </div>
       </div>
 
-      {/* Bottom: Video Section */}
-      <div style={{ width: "100%", marginTop: "50px", textAlign: "center" }}>
-        <h2>Product Video</h2>
-        <div style={{ maxWidth: "800px", margin: "20px auto" }}>
-          <video width="100%" height="auto" controls style={{ borderRadius: "15px" }}>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-            Your browser does not support HTML5 video.
-          </video>
-        </div>
-      </div>
 
       {/* Hover effect */}
       <style>{`
