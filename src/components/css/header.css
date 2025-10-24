@@ -1,19 +1,19 @@
 /* Navbar static with blue background */
 .navbar-static {
-  background-color: #36c423e8; /* Bootstrap blue */
-  color: white;
+  background-color: #ffffffe8; /* Bootstrap blue */
+  color: rgb(20, 2, 180);
   padding: 0.5rem 1rem;
 }
 
 /* Navbar links */
 .navbar-static .nav-link {
-  color: white;
+  color: rgb(3, 75, 175);
   font-weight: 500;
 }
 
 .navbar-static .nav-link:hover,
 .navbar-static .nav-link:focus {
-  color: #cce5ff; /* lighter blue on hover */
+  color: #000000; /* lighter blue on hover */
 }
 
 /* Navbar brand/logo */

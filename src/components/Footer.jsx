@@ -24,12 +24,28 @@ const Footer = () => {
           <div className="col-md-3 mb-4">
             <h5>MyPortfolio</h5>
             <p>Your trusted partner in providing quality solutions.</p>
-            <div className="d-flex gap-3">
-<button onClick={() => handleSocialClick('Facebook')} className="btn btn-outline-light btn-sm fs-4"><i className="bi bi-facebook"></i></button>
-              <button onClick={() => handleSocialClick('Twitter')} className="btn btn-outline-light btn-sm fs-4"><i className="bi bi-twitter"></i></button>
-              <button onClick={() => handleSocialClick('LinkedIn')} className="btn btn-outline-light btn-sm fs-4"><i className="bi bi-linkedin"></i></button>
-              <button onClick={() => handleSocialClick('Instagram')} className="btn btn-outline-light btn-sm fs-4"><i className="bi bi-instagram"></i></button>
-      </div>
+          <div className="d-flex gap-3">
+  {/* LinkedIn */}
+  <a 
+    href="https://www.linkedin.com/in/lavish-patidar-a63032320/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="btn btn-outline-light btn-sm fs-4"
+  >
+    <i className="bi bi-linkedin"></i>
+  </a>
+
+  {/* Instagram */}
+  <a 
+    href="https://www.instagram.com/bharatexims_/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="btn btn-outline-light btn-sm fs-4"
+  >
+    <i className="bi bi-instagram"></i>
+  </a>
+</div>
+
           </div>
 
           {/* Quick Links */}
