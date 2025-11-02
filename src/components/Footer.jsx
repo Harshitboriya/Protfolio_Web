@@ -50,24 +50,17 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="col-md-3 mb-4">
-            <h5>Quick Links</h5>
+            {/* <h5>Quick Links</h5>
             <ul className="list-unstyled">
               {quickLinks.map(link => (
                 <li key={link.to}>
                   <NavLink to={link.to} className="text-light text-decoration-none">{link.label}</NavLink>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
 
-          {/* Legal */}
-          <div className="col-md-3 mb-4">
-            <h5>Legal</h5>
-            <ul className="list-unstyled">
-              <li><button onClick={() => handleSocialClick('Privacy Policy')} className="btn btn-link text-light p-0">Privacy Policy</button></li>
-              <li><button onClick={() => handleSocialClick('Terms of Service')} className="btn btn-link text-light p-0">Terms of Service</button></li>
-            </ul>
-          </div>
+      
 
           {/* Contact */}
           <div className="col-md-3 mb-4">
@@ -78,7 +71,14 @@ const Footer = () => {
               <li>+91 9174180598</li>
             </ul>
           </div>
-
+              {/* Legal */}
+          <div className="col-md-3 mb-4">
+            {/* <h5>Legal</h5>
+            <ul className="list-unstyled">
+              <li><button onClick={() => handleSocialClick('Privacy Policy')} className="btn btn-link text-light p-0">Privacy Policy</button></li>
+              <li><button onClick={() => handleSocialClick('Terms of Service')} className="btn btn-link text-light p-0">Terms of Service</button></li>
+            </ul> */}
+          </div>
         </div>
 
         <div className="text-center mt-4 pt-3 border-top border-secondary">
